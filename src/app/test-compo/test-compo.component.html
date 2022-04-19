@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+</head>
+<body>
+<div class="container mt-5">
+<div class="card">
+<div class="bg-custom text-white">
+<div class="card-header">
+<div class="row align-items-center">
+<div class="col-6">
+<h4 class="m-0">To-Do List</h4>
+</div>
+<div class="col-6">
+
+</div>
+</div>
+</div>
+</div>
+<div class="card-body">
+<form method="post">
+	<input type="text" id="toDoList" placeholder="Type Ur To Do List" class="form-control" [(ngModel)]="todo.todo_text" name="todo_text" required><br>
+	<input type="datetime-local" name="schedule_date" [(ngModel)]="todo.schedule_date" >
+	<button class="add btn btn-primary font-weight-bold todo-list-add-btn" (click)="addTodoData()" style='float:right;'>Add</button>
+</form>
+</div>
+<div class="todo-data" id="listing">
+	<br>
+	<br>
+
+<ul>
+	
+<li class="listLenght" data-liLenght="listLenght" *ngFor = "let td of todo_list">
+	
+	<input type="text"  [(ngModel)]="td.todo_text" class="form-control">
+	<input type="datetime-local" [(ngModel)]="td.schedule_date">
+	
+	<span align='right'> 
+		
+		<i class='far fa-edit' style='color:#5C7AEA;float:right;' data-text = 'todoText' data-lenght='listLenght' (click)="editTodoData(td.id, td.todo_text, td.schedule_date)">
+		</i>  
+
+		<i class='fas fa-trash-alt' style='color:#FF5C58;float:right;' data-lenght='listLenght' (click)="deleteTodoData(td.id)"> 
+		</i>
+
+		<div *ngIf="td.is_completed else elseBlock">Completed</div>
+		<ng-template #elseBlock><i class='fas fa-check' style='color:#green;float:right;' data-lenght='listLenght' (click)="completeTodoData(td.id)"> 
+		</i></ng-template>
+	</span>
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" type="text/javascript"></script>
+

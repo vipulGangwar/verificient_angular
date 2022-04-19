@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Duru+Sans&display=swap');
+      body{
+      font-family: "Nunito Sans";
+      }
+      ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+       font-size: 20px;
+      }
+      a,a:hover{
+      text-decoration: none;
+      }
+      .form-control {
+      line-height: 2;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      width: 100%;
+      height: 44px;
+      font-size: 20px;
+      }
+      .form-control:hover {
+      border-color: #241f61;
+      }
+      .form-control:focus {
+      box-shadow: none;
+      border-color: #130f40;
+      }
+      .card{
+      border: 0px;
+      }
+      .card-body{
+      border: 1px solid rgba(0,0,0,.125);
+      border-top: 0;
+      }
+      li{
+      padding: 15px;
+      border: 10px solid rgba(0,0,0,.125);
+      }
+      i{
+      padding-right: 15px;
+      cursor: pointer;
+      padding-top: 5px;
+      }
+      .bg-custom{
+      background: #1597E5;
+      }
